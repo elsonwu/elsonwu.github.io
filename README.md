@@ -55,6 +55,8 @@ GraphQL-RS: A minimal GraphQL implementation in Rust, built for educational purp
 
 **Language**: Rust
 
+**Topics**: `graphql` `graphql-server` `learning-by-doing` `rust`
+
 ---
 
 <!-- AUTO-GENERATED-PROJECTS-END -->
