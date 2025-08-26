@@ -1,0 +1,12 @@
+{
+  "repositories": [
+    "elsonwu/jing-lang",
+    "elsonwu/git-rs"
+  ],
+  "settings": {
+    "include_stats": true,
+    "include_topics": true,
+    "include_language_badges": true,
+    "auto_sync_schedule": "0 2 * * *"
+  }
+}

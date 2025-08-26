@@ -4,70 +4,24 @@ Welcome to my GitHub profile! I'm a passionate developer who loves building tool
 
 ## 🚀 Featured Projects
 
-### 🦀 [Jing Language](https://github.com/elsonwu/jing-lang) - A Simple Toy Language with Virtual Machine
+<!-- AUTO-GENERATED-PROJECTS-START -->
+<!-- Repository list for auto-sync: elsonwu/jing-lang, elsonwu/git-rs -->
+
+### 🦀 [elsonwu/jing-lang](https://github.com/elsonwu/jing-lang)
 
 [![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)](https://github.com/elsonwu/jing-lang)
-[![GitHub](https://img.shields.io/github/stars/elsonwu/jing-lang?style=social)](https://github.com/elsonwu/jing-lang)
+[![Stars](https://img.shields.io/github/stars/elsonwu/jing-lang?style=social)](https://github.com/elsonwu/jing-lang)
 
-A complete programming language implementation featuring:
+Auto-synced repository information will appear here
 
-- **Stack-based Virtual Machine** with custom bytecode
-- **Modular Architecture** with plugin-like extensibility
-- **Comprehensive Features**: Variables, functions, control flow, I/O operations
-- **Built-in Functions**: Math, string manipulation, file operations
-- **Educational Design** with extensive documentation and visual guides
-
-```jing
-// Example Jing code
-fn fibonacci(n) {
-    if n <= 1 {
-        return n;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
-
-let result = fibonacci(10);
-print("Fibonacci(10) = " + str(result));
-```
-
-**Key Highlights:**
-
-- 🏗️ Complete compilation pipeline: Lexer → Parser → Compiler → VM
-- 📚 Extensive documentation with beginner-friendly guides
-- 🔧 Easy to extend with new built-in functions
-- 🧪 Comprehensive test suite with integration tests
-
----
-
-### 🔧 [Git-RS](https://github.com/elsonwu/git-rs) - Educational Git Implementation
+### 🔧 [elsonwu/git-rs](https://github.com/elsonwu/git-rs)
 
 [![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)](https://github.com/elsonwu/git-rs)
-[![GitHub](https://img.shields.io/github/stars/elsonwu/git-rs?style=social)](https://github.com/elsonwu/git-rs)
+[![Stars](https://img.shields.io/github/stars/elsonwu/git-rs?style=social)](https://github.com/elsonwu/git-rs)
 
-A minimal Git implementation built from scratch to understand version control internals:
+Auto-synced repository information will appear here
 
-- **Core Git Commands**: `init`, `add`, `status` (with `commit`, `diff`, `clone` in development)
-- **Domain-Driven Design** with clean architecture separation
-- **Educational Focus** with detailed internals documentation
-- **Safe Learning Environment** using `.git-rs/` to avoid conflicts with real Git repos
-
-```bash
-# Initialize a repository
-git-rs init
-
-# Stage files with content-addressed storage
-git-rs add README.md src/
-
-# Check status with three-tree comparison
-git-rs status
-```
-
-**Key Highlights:**
-
-- 🧠 Deep dive into Git's object model (blobs, trees, commits)
-- 🗂️ Content-addressed storage with SHA-1 hashing
-- 📊 Visual guides explaining Git's three-tree architecture
-- 🔍 Safe to experiment with alongside real Git repositories
+<!-- AUTO-GENERATED-PROJECTS-END -->
 
 ---
 
@@ -86,12 +40,6 @@ git-rs status
 - 📚 **Educational Software** - Clear documentation, learning-focused design
 - 🔧 **Developer Tools** - CLI applications, development utilities
 
-**Architecture & Design:**
-
-- **Domain-Driven Design** - Clean architecture with separated concerns
-- **Test-Driven Development** - Comprehensive test suites
-- **Documentation-First** - Extensive guides and visual explanations
-
 ---
 
 ## 📊 GitHub Activity
@@ -106,10 +54,10 @@ git-rs status
 
 ## 🎯 What I'm Working On
 
-- 🚧 **Jing Language**: Adding arrays, objects, and import/module system
-- 🔄 **Git-RS**: Implementing `commit`, `diff`, and `clone` commands
-- 📚 **Learning**: Exploring advanced compiler optimizations and JIT compilation
-- 🛠️ **Tools**: Building developer productivity tools in Rust
+- 🚧 **Language Design**: Exploring advanced compiler optimizations and JIT compilation
+- 🔄 **Developer Tools**: Building productivity tools in Rust
+- 📚 **Learning**: Understanding distributed systems and WebAssembly
+- 🛠️ **Open Source**: Contributing to educational programming projects
 
 ---
 
@@ -124,28 +72,11 @@ I believe in **learning by building**. Each project is designed to:
 
 ---
 
-## 🌱 Currently Learning
-
-- **Advanced Rust**: Async programming, unsafe code, performance optimization
-- **Compiler Design**: LLVM backend integration, optimization passes
-- **WebAssembly**: Targeting Jing language to WASM
-- **Distributed Systems**: Understanding Git's distributed architecture
-
----
-
 ## 📫 Let's Connect
 
 - 💬 **Ask me about**: Rust, programming languages, compilers, Git internals
 - 🤝 **Open to**: Collaboration on educational projects, code reviews, mentoring
 - 📧 **Reach me**: Through GitHub issues on any of my repositories
-
----
-
-## 🔗 Quick Links
-
-- 🌐 **Jing Language Docs**: [Comprehensive Documentation](https://github.com/elsonwu/jing-lang/blob/main/docs/)
-- 🔧 **Git-RS Architecture**: [Technical Deep Dive](https://github.com/elsonwu/git-rs/blob/main/docs/ARCHITECTURE.md)
-- 📚 **Learning Resources**: Check out the `/docs` folders in my repos for detailed guides
 
 ---
 
