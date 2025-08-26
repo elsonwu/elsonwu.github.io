@@ -9,17 +9,29 @@ Welcome to my GitHub profile! I'm a passionate developer who loves building tool
 
 ### 🦀 [elsonwu/jing-lang](https://github.com/elsonwu/jing-lang)
 
-[![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)](https://github.com/elsonwu/jing-lang)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
 [![Stars](https://img.shields.io/github/stars/elsonwu/jing-lang?style=social)](https://github.com/elsonwu/jing-lang)
 
-Auto-synced repository information will appear here
+Jing - A Simple Toy Language with Virtual Machine
 
-### 🔧 [elsonwu/git-rs](https://github.com/elsonwu/git-rs)
+**Language**: Rust • **Issues**: 1
 
-[![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)](https://github.com/elsonwu/git-rs)
+**Topics**: `learning-by-doing` `rust`
+
+---
+
+### 🦀 [elsonwu/git-rs](https://github.com/elsonwu/git-rs)
+
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
 [![Stars](https://img.shields.io/github/stars/elsonwu/git-rs?style=social)](https://github.com/elsonwu/git-rs)
 
-Auto-synced repository information will appear here
+A lightweight Git clone built in Rust, created as a learning project.
+
+**Language**: Rust
+
+**Topics**: `git` `learning-by-doing` `rust`
+
+---
 
 <!-- AUTO-GENERATED-PROJECTS-END -->
 
