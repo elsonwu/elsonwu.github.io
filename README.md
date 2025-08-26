@@ -97,6 +97,37 @@ I believe in **learning by building**. Each project is designed to:
 
 ---
 
+## 🤖 AI-Powered Learning Journey
+
+> **Important Note**: Almost all of these projects are implemented with AI assistance, primarily for learning purposes.
+
+I believe that **you can't truly use something unless you understand how it works**. That's why I create these implementations:
+
+### 🎯 My Learning Approach
+
+- 🤝 **AI as Learning Partner** - Using AI to understand complex concepts by building them
+- 🔍 **Learning Through Implementation** - If I want to understand Git, I build a Git clone
+- 📚 **Educational Value** - Each project serves as a learning resource for myself and others
+- 🧠 **Conceptual Understanding** - Focus on grasping the underlying principles and architectures
+
+### 🌟 Why This Matters
+
+- **For Me**: Building something helps me internalize how it really works
+- **For Others**: These implementations can help fellow learners understand complex systems
+- **For Community**: Sharing the learning journey and making knowledge accessible
+
+### 🛠️ The Process
+
+1. **Wonder**: How does [X] actually work?
+2. **Research**: Study the concepts and existing implementations
+3. **Build**: Create a simplified version with AI assistance
+4. **Document**: Explain the journey and key learnings
+5. **Share**: Make it available for others who learn the same way
+
+*Each repository represents not just code, but a learning journey that others can follow and learn from.*
+
+---
+
 ## 📫 Let's Connect
 
 - 💬 **Ask me about**: Rust, programming languages, compilers, Git internals
