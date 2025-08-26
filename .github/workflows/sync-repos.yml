@@ -71,19 +71,25 @@ jobs:
             const repoListMatch = readmeContent.match(/<!-- Repository list for auto-sync: (.+) -->/);
             
             if (!repoListMatch) {
-              console.log('❌ No repository list found in README.md');
+              console.error('❌ No repository list found in README.md');
               process.exit(1);
             }
             
             let repos = repoListMatch[1].split(', ').map(repo => repo.trim()).filter(repo => repo.length > 0);
             console.log('📋 Current repositories:', repos);
             
+            // Validate repository format if provided
+            if (REPOSITORY && !REPOSITORY.match(/^[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+$/)) {
+              console.error(`❌ Invalid repository format: ${REPOSITORY}. Expected format: owner/repo`);
+              process.exit(1);
+            }
+            
             // Handle different actions
             let repoListChanged = false;
             switch (ACTION) {
               case 'add-repo':
                 if (!REPOSITORY) {
-                  console.log('❌ Repository parameter required for add-repo action');
+                  console.error('❌ Repository parameter required for add-repo action');
                   process.exit(1);
                 }
                 if (repos.includes(REPOSITORY)) {
@@ -97,7 +103,7 @@ jobs:
                 
               case 'remove-repo':
                 if (!REPOSITORY) {
-                  console.log('❌ Repository parameter required for remove-repo action');
+                  console.error('❌ Repository parameter required for remove-repo action');
                   process.exit(1);
                 }
                 const index = repos.indexOf(REPOSITORY);
@@ -114,8 +120,8 @@ jobs:
                 console.log('🔄 Running sync with current repositories...');
                 break;
                 
-              default:
-                console.log(`❌ Unknown action: ${ACTION}`);
+                default:
+                console.error(`❌ Unknown action: ${ACTION}`);
                 process.exit(1);
             }
             
@@ -140,18 +146,17 @@ jobs:
             }
           } catch (error) {
             console.error('❌ Error:', error.message);
+            console.error('Stack trace:', error.stack);
             process.exit(1);
           }
-        }
-        
-        async function fetchRepoInfo(repo) {
+        }        async function fetchRepoInfo(repo) {
           return new Promise((resolve, reject) => {
             const options = {
               hostname: 'api.github.com',
               path: `/repos/${repo}`,
               method: 'GET',
               headers: {
-                'User-Agent': 'GitHub-Profile-Sync',
+                'User-Agent': 'GitHub-Profile-Sync/1.0',
                 'Authorization': `token ${process.env.GITHUB_TOKEN}`,
                 'Accept': 'application/vnd.github.v3+json'
               }
@@ -161,15 +166,31 @@ jobs:
               let data = '';
               res.on('data', chunk => data += chunk);
               res.on('end', () => {
-                if (res.statusCode === 200) {
-                  resolve(JSON.parse(data));
-                } else {
-                  reject(new Error(`HTTP ${res.statusCode}: ${data}`));
+                try {
+                  if (res.statusCode === 200) {
+                    resolve(JSON.parse(data));
+                  } else if (res.statusCode === 404) {
+                    reject(new Error(`Repository ${repo} not found or not accessible`));
+                  } else if (res.statusCode === 403) {
+                    reject(new Error(`API rate limit exceeded or insufficient permissions for ${repo}`));
+                  } else {
+                    reject(new Error(`HTTP ${res.statusCode}: ${data}`));
+                  }
+                } catch (parseError) {
+                  reject(new Error(`Failed to parse response for ${repo}: ${parseError.message}`));
                 }
               });
             });
         
-            req.on('error', reject);
+            req.on('error', (error) => {
+              reject(new Error(`Network error fetching ${repo}: ${error.message}`));
+            });
+            
+            req.setTimeout(10000, () => {
+              req.destroy();
+              reject(new Error(`Request timeout for ${repo}`));
+            });
+            
             req.end();
           });
         }
@@ -211,9 +232,16 @@ jobs:
           projectsSection += '<!-- AUTO-GENERATED-PROJECTS-START -->\n';
           projectsSection += `<!-- Repository list for auto-sync: ${repos.join(', ')} -->\n\n`;
         
-          for (const repo of repos) {
+          for (let i = 0; i < repos.length; i++) {
+            const repo = repos[i];
             try {
-              console.log(`📥 Fetching info for ${repo}...`);
+              console.log(`📥 Fetching info for ${repo}... (${i + 1}/${repos.length})`);
+              
+              // Add delay between requests to respect rate limits
+              if (i > 0) {
+                await new Promise(resolve => setTimeout(resolve, 1000)); // 1 second delay
+              }
+              
               const repoInfo = await fetchRepoInfo(repo);
               
               const emoji = getLanguageEmoji(repoInfo.language);
@@ -252,7 +280,7 @@ jobs:
             } catch (error) {
               console.error(`❌ Error fetching ${repo}:`, error.message);
               projectsSection += `### ${getLanguageEmoji('Unknown')} [${repo}](https://github.com/${repo})\n\n`;
-              projectsSection += `*Error loading repository information*\n\n---\n\n`;
+              projectsSection += `*Error loading repository information: ${error.message}*\n\n---\n\n`;
             }
           }
         
@@ -302,28 +330,20 @@ jobs:
           # Create different commit messages based on action
           case "$ACTION" in
             "add-repo")
-              COMMIT_MSG="🤖 Add repository: $REPOSITORY
-
-              - Added $REPOSITORY to featured projects
-              - Auto-synced repository information
-              - Updated on $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+              COMMIT_MSG="feat: add repository $REPOSITORY to featured projects"
+              COMMIT_BODY="Add $REPOSITORY to auto-sync list and update project information."$'\n\n'"Updated on $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
               ;;
             "remove-repo")
-              COMMIT_MSG="🤖 Remove repository: $REPOSITORY
-
-              - Removed $REPOSITORY from featured projects
-              - Updated repository list
-              - Updated on $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+              COMMIT_MSG="feat: remove repository $REPOSITORY from featured projects"
+              COMMIT_BODY="Remove $REPOSITORY from auto-sync list and update featured projects."$'\n\n'"Updated on $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
               ;;
             *)
-              COMMIT_MSG="🤖 Auto-sync repository information
-
-              - Updated project descriptions and stats
-              - Synced from GitHub API on $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+              COMMIT_MSG="chore: auto-sync repository information"
+              COMMIT_BODY="Update project data from GitHub API with latest statistics and badges."$'\n\n'"Synced on $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
               ;;
           esac
           
-          git commit -m "$COMMIT_MSG"
+          git commit -m "$COMMIT_MSG" -m "$COMMIT_BODY"
           git push
           echo "✅ Changes pushed successfully"
         fi
