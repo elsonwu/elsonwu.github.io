@@ -5,7 +5,7 @@ Welcome to my GitHub profile! I'm a passionate developer who loves building tool
 ## 🚀 Featured Projects
 
 <!-- AUTO-GENERATED-PROJECTS-START -->
-<!-- Repository list for auto-sync: elsonwu/jing-lang, elsonwu/git-rs, elsonwu/kafka-rs -->
+<!-- Repository list for auto-sync: elsonwu/jing-lang, elsonwu/git-rs, elsonwu/kafka-rs, elsonwu/graphql-rs -->
 
 ### 🦀 [elsonwu/jing-lang](https://github.com/elsonwu/jing-lang)
 
@@ -43,6 +43,17 @@ Kafka-RS: A minimal Rust implementation of Kafka’s core concepts for learning 
 **Language**: Rust • **Issues**: 1
 
 **Topics**: `kafka` `learning-by-doing` `rust`
+
+---
+
+### 🦀 [elsonwu/graphql-rs](https://github.com/elsonwu/graphql-rs)
+
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
+[![Stars](https://img.shields.io/github/stars/elsonwu/graphql-rs?style=social)](https://github.com/elsonwu/graphql-rs)
+
+GraphQL-RS: A minimal GraphQL implementation in Rust, built for educational purposes and to explore how GraphQL works under the hood.
+
+**Language**: Rust
 
 ---
 
