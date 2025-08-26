@@ -38,7 +38,11 @@ A lightweight Git clone built in Rust, created as a learning project.
 ![Makefile](https://img.shields.io/badge/Makefile-gray?style=flat)
 [![Stars](https://img.shields.io/github/stars/elsonwu/kafka-rs?style=social)](https://github.com/elsonwu/kafka-rs)
 
+Kafka-RS: A minimal Rust implementation of Kafka’s core concepts for learning purposes.
+
 **Language**: Makefile
+
+**Topics**: `kafka` `learning-by-doing` `rust`
 
 ---
 
