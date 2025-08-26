@@ -27,7 +27,7 @@ Jing - A Simple Toy Language with Virtual Machine
 
 A lightweight Git clone built in Rust, created as a learning project.
 
-**Language**: Rust
+**Language**: Rust • **Issues**: 1
 
 **Topics**: `git` `learning-by-doing` `rust`
 
