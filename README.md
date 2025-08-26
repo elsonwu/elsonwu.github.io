@@ -27,20 +27,20 @@ Jing - A Simple Toy Language with Virtual Machine
 
 A lightweight Git clone built in Rust, created as a learning project.
 
-**Language**: Rust • **Issues**: 1
+**Language**: Rust
 
 **Topics**: `git` `learning-by-doing` `rust`
 
 ---
 
-### 📦 [elsonwu/kafka-rs](https://github.com/elsonwu/kafka-rs)
+### 🦀 [elsonwu/kafka-rs](https://github.com/elsonwu/kafka-rs)
 
-![Makefile](https://img.shields.io/badge/Makefile-gray?style=flat)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
 [![Stars](https://img.shields.io/github/stars/elsonwu/kafka-rs?style=social)](https://github.com/elsonwu/kafka-rs)
 
 Kafka-RS: A minimal Rust implementation of Kafka’s core concepts for learning purposes.
 
-**Language**: Makefile
+**Language**: Rust • **Issues**: 1
 
 **Topics**: `kafka` `learning-by-doing` `rust`
 
