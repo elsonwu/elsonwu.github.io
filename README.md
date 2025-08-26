@@ -5,7 +5,7 @@ Welcome to my GitHub profile! I'm a passionate developer who loves building tool
 ## 🚀 Featured Projects
 
 <!-- AUTO-GENERATED-PROJECTS-START -->
-<!-- Repository list for auto-sync: elsonwu/jing-lang, elsonwu/git-rs -->
+<!-- Repository list for auto-sync: elsonwu/jing-lang, elsonwu/git-rs, elsonwu/kafka-rs -->
 
 ### 🦀 [elsonwu/jing-lang](https://github.com/elsonwu/jing-lang)
 
@@ -30,6 +30,15 @@ A lightweight Git clone built in Rust, created as a learning project.
 **Language**: Rust • **Issues**: 1
 
 **Topics**: `git` `learning-by-doing` `rust`
+
+---
+
+### 📦 [elsonwu/kafka-rs](https://github.com/elsonwu/kafka-rs)
+
+![Makefile](https://img.shields.io/badge/Makefile-gray?style=flat)
+[![Stars](https://img.shields.io/github/stars/elsonwu/kafka-rs?style=social)](https://github.com/elsonwu/kafka-rs)
+
+**Language**: Makefile
 
 ---
 
