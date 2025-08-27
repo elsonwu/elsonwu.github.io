@@ -46,14 +46,14 @@ Kafka-RS: A minimal Rust implementation of Kafka’s core concepts for learning 
 
 ---
 
-### 🦀 [elsonwu/graphql-rs](https://github.com/elsonwu/graphql-rs)
+### 📦 [elsonwu/graphql-rs](https://github.com/elsonwu/graphql-rs)
 
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
+![Makefile](https://img.shields.io/badge/Makefile-gray?style=flat)
 [![Stars](https://img.shields.io/github/stars/elsonwu/graphql-rs?style=social)](https://github.com/elsonwu/graphql-rs)
 
 GraphQL-RS: A minimal GraphQL implementation in Rust, built for educational purposes and to explore how GraphQL works under the hood.
 
-**Language**: Rust
+**Language**: Makefile • **Issues**: 11
 
 **Topics**: `graphql` `graphql-server` `learning-by-doing` `rust`
 
