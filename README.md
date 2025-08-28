@@ -40,7 +40,7 @@ A lightweight Git clone built in Rust, created as a learning project.
 
 Kafka-RS: A minimal Rust implementation of Kafka’s core concepts for learning purposes.
 
-**Language**: Rust • **Issues**: 1
+**Language**: Rust
 
 **Topics**: `kafka` `learning-by-doing` `rust`
 
@@ -53,7 +53,7 @@ Kafka-RS: A minimal Rust implementation of Kafka’s core concepts for learning 
 
 GraphQL-RS: A minimal GraphQL implementation in Rust, built for educational purposes and to explore how GraphQL works under the hood.
 
-**Language**: Makefile • **Issues**: 11
+**Language**: Makefile
 
 **Topics**: `graphql` `graphql-server` `learning-by-doing` `rust`
 
